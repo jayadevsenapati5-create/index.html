@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)file:///C:/Users/pc/Downloads/JS%20ORGANIC11.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JS ORGANIC</title>
+
+<style>
+
+  body{
+margin:0;
+font-family:Arial;
+background:#f5f5f5;
+}
+
+header{
+background:#0b6b3a;
+color:white;
+padding:18px;
+text-align:center;
+font-size:30px;
+font-weight:bold;
+}
+
+.tagline{
+text-align:center;
+color:#0a3d91;
+padding:10px;
+font-size:18px;
+}
+
+.hero{
+background-image:url("https://i.ibb.co/Z6tPcgqW/happy-beautiful-couple-posing-with-shopping-bags-violet.jpg");
+background-size:cover;
+background-position:center;
+height:65vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+color:white;
+text-align:center;
+}
+
+.hero h1{
+background:rgba(0,0,0,0.6);
+padding:12px 25px;
+border-radius:6px;
+}
+
+.hero button{
+margin-top:20px;
+padding:14px 30px;
+background:#0b6b3a;
+color:white;
+border:none;
+font-size:18px;
+cursor:pointer;
+border-radius:6px;
+}
+
+.products{
+padding:30px;
+}
+
+.products h2{
+text-align:center;
+}
+
+.carousel{
+display:flex;
+gap:20px;
+overflow-x:auto;
+}
+
+.product{
+background:white;
+padding:15px;
+border-radius:10px;
+min-width:220px;
+text-align:center;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+.product img{
+width:100%;
+height:150px;
+object-fit:cover;
+border-radius:6px;
+}
+
+.product button{
+background:#0b6b3a;
+color:white;
+border:none;
+padding:10px;
+margin-top:10px;
+border-radius:5px;
+cursor:pointer;
+}
+
+.cart{
+background:white;
+margin:30px;
+padding:25px;
+border-radius:10px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+input,textarea{
+width:100%;
+padding:10px;
+margin-top:10px;
+margin-bottom:15px;
+border-radius:5px;
+border:1px solid #ccc;
+}
+
+.cart button{
+background:#0b6b3a;
+color:white;
+padding:12px;
+border:none;
+border-radius:5px;
+font-size:16px;
+cursor:pointer;
+width:100%;
+}
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+font-size:22px;
+padding:15px;
+border-radius:50%;
+text-decoration:none;
+}
+
+footer{
+text-align:center;
+padding:15px;
+color:#666;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>JS ORGANIC</header>
+
+<div class="tagline">
+100% organic free chemical turmeric powder, no food colour add
+</div>
+
+<section class="hero">
+
+<h1>Pure Organic Products For Your Health</h1>
+
+<button onclick="scrollToProducts()">SHOP NOW</button>
+
+</section>
+
+<section class="products" id="products">
+
+<h2>Our Products</h2>
+
+<div class="carousel">
+
+<div class="product">
+<img src="./index_files/HALDI.jpg">
+<h3>Organic Turmeric Powder</h3>
+<p>₹300/kg</p>
+<button onclick="addToCart(&#39;Organic Turmeric Powder&#39;)">Add to Cart</button>
+</div>
+
+<div class="product">
+<img src="./index_files/Gemini-Generated-Image-b2afizb2afizb2af.png">
+<h3>Organic Red Chili</h3>
+<p>₹350/kg</p>
+<button onclick="addToCart(&#39;Organic Red Chili&#39;)">Add to Cart</button>
+</div>
+
+<div class="product">
+<img src="./index_files/ghee.png">
+<h3>Pure A2 GIR Cow Ghee</h3>
+<p>₹2200/kg</p>
+<button onclick="addToCart(&#39;Pure A2 GIR Cow Ghee&#39;)">Add to Cart</button>
+</div>
+
+</div>
+
+</section>
+
+<section class="cart">
+
+<h2>Your Order</h2>
+
+<input type="text" id="name" placeholder="Customer Name">
+
+<input type="tel" id="phone" placeholder="Phone Number">
+
+<textarea id="items" placeholder="Cart Items"></textarea>
+
+<button onclick="placeOrder()">Place Order</button>
+
+</section>
+
+<footer>
+
+Contact: jayadevsenapati5@gmail.com | 8908654900
+
+</footer>
+
+<a class="whatsapp" href="https://wa.me/918908654900" target="_blank">💬</a>
+
+<script>
+
+let cart=[];
+
+function addToCart(product){
+
+cart.push(product);
+
+document.getElementById("items").value = cart.join(", ");
+
+}
+
+function scrollToProducts(){
+
+document.getElementById("products").scrollIntoView({behavior:"smooth"});
+
+}
+
+function placeOrder(){
+
+let name=document.getElementById("name").value;
+let phone=document.getElementById("phone").value;
+let items=document.getElementById("items").value;
+
+let message="New Order%0A%0ACustomer: "+name+
+"%0APhone: "+phone+
+"%0AItems: "+items;
+
+let whatsapp="https://wa.me/918908654900?text="+message;
+
+let email="mailto:jayadevsenapati5@gmail.com?subject=New JS Organic Order&body="+message;
+
+window.open(whatsapp,"_blank");
+window.location.href=email;
+
+}
+
+</script>
+
+
+</body></html>
